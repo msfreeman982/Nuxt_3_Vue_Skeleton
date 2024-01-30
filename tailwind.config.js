@@ -6,7 +6,22 @@ module.exports = {
     './plugins/**/*.{js,ts}',
     './nuxt.config.{js,ts}',
   ],
-  theme: {},
+  theme: {
+    extend: {
+      fontFamily: {
+        poppins: ['Poppins', 'sans-serif'],
+        nunitoSans: ['Nunito Sans', 'sans-serif'],
+      },
+      colors: {
+        сharcoal: '#353844',
+        steelBlue: '#2ecc71',
+        royalBlue: '#506BCA',
+        midnightBlue: '#1B264F',
+        white: '#FFF',
+        lavenderGray: '#F5F5F8'
+      },
+    },
+  },
   plugins: [
     '@tailwindcss/forms',
     '@tailwindcss/typography',
