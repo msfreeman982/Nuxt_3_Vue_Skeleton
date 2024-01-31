@@ -1,13 +1,13 @@
 <script setup lang="ts"></script>
 
 <template>
-  <div class="container">
+  <div class="page">
     <slot />
   </div>
 </template>
 
 <style scoped>
-.container {
-  @apply py-[80px] max-w-[1372px] mx-auto;
+.page {
+  @apply bg-lavenderGray pt-[108px] pb-[108px];
 }
 </style>

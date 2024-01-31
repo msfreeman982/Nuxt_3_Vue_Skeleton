@@ -1,19 +1,33 @@
 <script setup lang="ts">
 import Title from '~/components/atoms/Title.vue'
 import Button from '~/components/atoms/Button.vue'
+import PageWrapper from '~/components/atoms/PageWrapper.vue'
+import CardContainer from '~/components/atoms/CardContainer.vue'
 import Container from '~/components/atoms/Container.vue'
+import Card from '~/components/atoms/Card.vue'
 import fakeData from '~/middleware/fakeapi'
 </script>
 
 <template>
-  <div class="bg-lavenderGray">
+  <PageWrapper>
     <Title text="We make creative media that" textColor="adds value" />
-      <Container>
-        {{ fakeData }}
-        <Card />
-      </Container>
-      <Button buttonText="Get STARTED" />
-  </div>
+    <Container>
+      <CardContainer>
+        <Card
+          v-for="item in fakeData"
+          :key="item.id"
+          :title="item.title"
+          :list="item.list"
+          :description="item.description"
+        />
+      </CardContainer>
+    </Container>
+    <Button buttonText="Get STARTED" />
+  </PageWrapper>
 </template>
 
-<style scoped></style>
+<style>
+body {
+  margin: 0;
+}
+</style>

@@ -1,17 +1,17 @@
 export default {
   buildModules: ['nuxt-vite'],
+
   postcss: {
     plugins: {
       tailwindcss: {},
       autoprefixer: {},
     },
   },
-  vite: {
-    build: {
-      cssCodeSplit: false,
-    },
-    plugins: [require('tailwindcss')],
+
+  image: {
+    dir: 'assets/img',
   },
+
   // buildModules: ['@nuxtjs/tailwindcss'],
   // typescript: {
   //   typeCheck: true,
@@ -22,4 +22,12 @@ export default {
   //   configPath: 'tailwind.config.js',
   //   jit: true,
   // },
-}
+  vite: {
+    build: {
+      cssCodeSplit: false,
+    },
+    plugins: [require('tailwindcss')],
+  },
+
+  modules: ["@nuxt/image"]
+};

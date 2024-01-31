@@ -16,6 +16,6 @@ const { buttonText = '' } = defineProps<IButtonProps>()
 
 <style scoped>
 .btn {
-  @apply text-white bg-midnightBlue rounded-[12px] px-[58px] text-center font-poppins not-italic text-[17px] font-[700] leading-[60px] uppercase tracking-[3.4px];
+  @apply w-[315px] h-[60px] mx-auto flex border-0 text-white bg-midnightBlue rounded-[12px] px-[58px] justify-center font-poppins not-italic text-[17px] font-[700] leading-[60px] uppercase tracking-[3.4px] hover:cursor-pointer;
 }
 </style>
