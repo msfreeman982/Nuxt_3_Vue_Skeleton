@@ -8,9 +8,10 @@ const fakeData = [
   },
   {
     title: 'Virtual Staging',
-    description:
-      'Our staging will help you sell the potential of your space. We can work off of our own photography or photos you provide.',
-    imagePath: 'VirtualStaging.svg',
+    description: 'Our staging will help you sell the potential of your space.',
+    secondDescription:
+      'We can work off of our own photography or photos you provide.',
+    imagePath: 'VirtualStaging.png',
   },
   {
     title: 'Renderings',

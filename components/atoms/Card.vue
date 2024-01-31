@@ -4,6 +4,7 @@ import fakeData from '~/middleware/fakeapi'
 interface ICardProps {
   title?: string
   description?: string
+  secondDescription?: string
   list?: string[]
   imagePath?: string
 }
@@ -11,11 +12,6 @@ interface ICardProps {
 const props = defineProps<ICardProps>()
 
 const item = fakeData.find((item) => item.title === props.title)
-
-const getImageUrl = (imagename: string) => {
-
-  return (`~/assets/img/${imagename}`)
-}
 </script>
 
 <template>
@@ -23,7 +19,7 @@ const getImageUrl = (imagename: string) => {
     <div class="card_image">
       <nuxt-img
         v-if="item.imagePath"
-        :src="getImageUrl(item.imagePath)"
+        :src="item.imagePath"
         :alt="item.title"
         :title="item.title"
       />
@@ -51,6 +47,7 @@ const getImageUrl = (imagename: string) => {
         class="card_text__description"
       >
         {{ description }}
+        <div v-if="secondDescription">{{ secondDescription }}</div>
       </div>
     </div>
   </div>
@@ -58,11 +55,15 @@ const getImageUrl = (imagename: string) => {
 
 <style scoped>
 .card {
-  @apply bg-white rounded-[8px] flex md:w-[437px] mb-[40px];
+  @apply bg-white rounded-[8px] flex md:w-[437px] mb-[40px] max-h-[336px];
 }
 
 .card_image {
-  @apply w-[135px] h-[336px];
+  @apply w-[183px] h-[336px];
+}
+
+.card_image img {
+  @apply w-[183px] h-[336px];
 }
 
 .card_text {
@@ -78,7 +79,7 @@ const getImageUrl = (imagename: string) => {
 }
 
 .card_text__list li {
-  @apply text-[15px] not-italic font-[700] font-nunitoSans leading-[26px];
+  @apply text-charcoal text-[15px] not-italic font-[700] font-nunitoSans leading-[26px];
 }
 
 .card_text__list li::marker {

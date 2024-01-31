@@ -9,8 +9,8 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        poppins: ['Poppins'],
-        nunitoSans: ['Nunito Sans'],
+        poppins: ['Poppins', 'sans-serif'],
+        nunitoSans: ['Nunito Sans', 'sans-serif'],
       },
       colors: {
         charcoal: '#353844',

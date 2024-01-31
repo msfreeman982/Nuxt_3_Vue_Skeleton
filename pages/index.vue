@@ -18,6 +18,7 @@ import fakeData from '~/middleware/fakeapi'
           :key="item.id"
           :title="item.title"
           :list="item.list"
+          :secondDescription="item.secondDescription"
           :description="item.description"
         />
       </CardContainer>
